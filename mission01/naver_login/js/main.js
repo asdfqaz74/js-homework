@@ -1,11 +1,11 @@
-// 공백 또는 유효할 때는 뜨고
-// 뭔가를 입력할 때는 유효하지 않고
-
 const user = {
   id: "asd@naver.com",
   pw: "spdlqj123!@",
 };
 
+// let 모음
+let emailInput = document.querySelector("#userEmail");
+let passWordInput = document.querySelector("#userPassword");
 /*
 
 1. email 정규표현식을 사용한 validation
@@ -31,7 +31,6 @@ function pwReg(text) {
 
 function validEmail() {
   // emailInput 에 이메일 input 을 할당
-  const emailInput = document.querySelector("#userEmail");
 
   // input 에 EventListener 추가
   emailInput.addEventListener("input", function () {
@@ -52,11 +51,8 @@ function validEmail() {
   });
 }
 
-validEmail();
-
 function validPassWord() {
   // passWordInput 에 패스워드 input 을 할당
-  let passWordInput = document.querySelector("#userPassword");
 
   // input 에 EventListener 추가
   passWordInput.addEventListener("input", function () {
@@ -77,6 +73,24 @@ function validPassWord() {
   });
 }
 
-validPassWord();
+// input 에 값을 넣으면 실시간으로 객체를 만들어주는 함수 작성
+function isMatch() {
+  emailInput.addEventListener("input", updateTest);
+  passWordInput.addEventListener("input", updateTest);
 
-function isMatch(id, pw) {}
+  let test = {
+    id: emailInput.value,
+    pw: passWordInput.value,
+  };
+  function updateTest() {
+    test = {
+      id: emailInput.value,
+      pw: passWordInput.value,
+    };
+    console.log(test);
+  }
+}
+
+validEmail();
+validPassWord();
+isMatch();
