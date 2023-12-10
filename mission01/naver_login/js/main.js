@@ -10,9 +10,9 @@ const user = {
   id: "asd@naver.com",
   pw: "spdlqj123!@",
 };
-const emailInput = document.querySelector("#userEmail");
-const passWordInput = document.querySelector("#userPassword");
-const idPw = {};
+let emailInput = document.querySelector("#userEmail");
+let passWordInput = document.querySelector("#userPassword");
+let idPw = {};
 const buttonClick = document.querySelector("#btn-login");
 
 // 정규 표현식 모음
@@ -30,6 +30,7 @@ function pwReg(text) {
 
 // 시작
 
+// 이메일 유효성 검사
 function validEmail() {
   // emailInput 에 이메일 input 을 할당
 
@@ -54,6 +55,7 @@ function validEmail() {
   });
 }
 
+// 비밀번호 유효성 검사
 function validPassWord() {
   // passWordInput 에 패스워드 input 을 할당
 
@@ -123,6 +125,7 @@ window.location.href = 'welcome.html' 로 이동
 8.  idPw 를 전역변수로 선언?
 */
 
+// user 와 idPw 가 같은지 검사하는 함수
 function isMatch() {
   // idPw 의 id & pw 가 user 의 id & pw 가 같다면
   if (idPw.id === user.id && idPw.pw === user.pw) {
@@ -146,24 +149,3 @@ idPwInput();
 
 // 버튼 클릭 시 이벤트 리스너 등록
 buttonClick.addEventListener("click", onButtonClick);
-
-/* 
-
-현 문제점
-1.  idPw.id 가 안나옴 
-    >> updateIdPw() 의 위치를 바꿔줌
-
-2.  window.location.href = 'welcome/html' 을 해도 적용되지않음
-    >> 무슨 문제인가 했더니 단순 오타였음
-    >> preventDefault 인데 Default 의 a 와 u 를 바꿔써서 오류가 났음.
-
-3.  IP 보안 에 연결된 html 파일이 없음.
-    >> 내가 직접 html 파일을 만들어서 작성해 줘야함.
-    >> 작성해서 이미지 파일을 연결해줬음 여기서 궁금점이 생김
-    >> 저렇게 작성한 html 은 img가 여러 정보가 한 뭉텅이(?) 로 이뤄져 있는데 alt 에는 무엇을 써야할지 감이 안옴.
-    >> span 을 써서 단계마다 sr-only 등을 써야 하는지?
-    >> 예를 들어,   <span class='sr-only' >1단계 사용대상 ... 보안효과 ... </span>
-    >>            <span class='sr-only' >2단계 사용대상 ... 보안효과 ... </span>
-    >> 등으로 써야 할지 궁금점이 생김.
-
-*/
