@@ -138,7 +138,9 @@ function isMatch() {
     window.location.href = "welcome.html";
   } else {
     // 그렇지 않다면 경고창 띄움
+    // 비밀번호 초기화
     alert("아이디가 일치하지 않습니다.");
+    passWordInput.value = "";
   }
 }
 

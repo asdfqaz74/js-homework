@@ -64,7 +64,7 @@ function idPwInput() {
   passWordInput.addEventListener("input", updateIdPw);
 }
 
-// 이메일에 update 된 값을 idPw 에 할당해주는 함수
+// input에 update 된 값을 idPw 에 할당해주는 함수
 function updateIdPw() {
   idPw = {
     id: emailInput.value,

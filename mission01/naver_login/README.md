@@ -66,4 +66,5 @@ https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener
 
 ## 로그인 실패
 
-![login_fail](https://github.com/asdfqaz74/js-homework/assets/74591618/291f3faa-ea47-4f09-8cbe-b07302159b4c)
+![login_fail](https://github.com/asdfqaz74/js-homework/assets/74591618/ad624b6d-b8af-413e-b2ee-07180ff9401e)
+
