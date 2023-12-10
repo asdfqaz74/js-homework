@@ -68,3 +68,94 @@ https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener
 
 ![login_fail](https://github.com/asdfqaz74/js-homework/assets/74591618/ad624b6d-b8af-413e-b2ee-07180ff9401e)
 
+</br>
+
+# 내 코드와 리펙토링된 코드의 차이점
+일단 제일 큰 차이점은 다음 코드를 보면 알 수 있었다.
+```js
+function validEmail() {
+  emailInput.addEventListener("input", function () {
+    let isValidEmail = emailReg(emailInput.value);
+    if (emailInput.value === "" || isValidEmail) {
+      emailInput.classList.remove("is--invalid");
+    }
+    else {
+      emailInput.classList.add("is--invalid");
+    updateIdPw();
+  });
+  window.addEventListener("load", function () {
+    emailInput.classList.remove("is--invalid");
+  });
+}
+
+function validPassWord() {
+  passWordInput.addEventListener("input", function () {
+    let isValidPassWord = pwReg(passWordInput.value);
+    if (passWordInput.value === "" || isValidPassWord) {
+      passWordInput.classList.remove("is--invalid");
+    }
+    else {
+      passWordInput.classList.add("is--invalid");
+    }
+    updateIdPw();
+  });
+  window.addEventListener("load", function () {
+    passWordInput.classList.remove("is--invalid");
+  });
+}
+```
+</br>
+
+```js
+function validateInput(input, validationFunction) {
+  const isValid = validationFunction(input.value);
+  if (input.value === "" || isValid) {
+    input.classList.remove("is--invalid");
+  } else {
+    input.classList.add("is--invalid");
+  }
+  updateIdPw();
+}
+
+function validEmail() {
+  emailInput.addEventListener("input", function () {
+    validateInput(emailInput, emailReg);
+  });
+
+  window.addEventListener("load", function () {
+    emailInput.classList.remove("is--invalid");
+  });
+}
+
+function validPassWord() {
+  passWordInput.addEventListener("input", function () {
+    validateInput(passWordInput, pwReg);
+  });
+
+  window.addEventListener("load", function () {
+    passWordInput.classList.remove("is--invalid");
+  });
+}
+
+```
+
+## 여기서 날 것(내 코딩)과 리펙토링의 차이점
+validEmail() / validPassWord() 안의 함수를 나눠줬다.</br>
+함수 안에 함수를 또 작성하는 것을 지양하였다.</br>
+여기서 내가 왜 함수를 분리시키지 않았던 이유가 무엇이냐면</br>
+emailInput 과 passWordInput 을 따로 분리시킬 수 있는 방법이 떠오르지 않았기 때문이다.</br>
+여기서만 갈리고 나머지 부분은 똑같았다.</br>
+함수를 좀 더 간결하게 쓸 수 있는 연습을 하면 될것같다.
+
+```js
+// 이 부분에서 parameter input 을 쓰는방법이 어색했음.
+function validateInput(input, validationFunction) {
+  const isValid = validationFunction(input.value);
+  if (input.value === "" || isValid) {
+    input.classList.remove("is--invalid");
+  } else {
+    input.classList.add("is--invalid");
+  }
+  updateIdPw();
+}
+```

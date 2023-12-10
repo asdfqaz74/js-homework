@@ -127,6 +127,9 @@ window.location.href = 'welcome.html' 로 이동
 7.  그럼 idPwInput() 안에 있는 저 idPw 를 쓰려면 어떻게 해야할까?
 
 8.  idPw 를 전역변수로 선언?
+> 해보니 idPw 를 따로 전역변수로 선언할 필요가 없었음.
+ex. idPw = {}  -> 해줄 필요가 없음.
+why? 어차피 updateIdPw() 안에 idPw 가 들어가있기 때문.
 */
 
 // user 와 idPw 가 같은지 검사하는 함수
