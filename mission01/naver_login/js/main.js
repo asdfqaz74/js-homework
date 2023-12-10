@@ -1,22 +1,21 @@
-const user = {
-  id: "asd@naver.com",
-  pw: "spdlqj123!@",
-};
-
-// let & const 모음
-let emailInput = document.querySelector("#userEmail");
-let passWordInput = document.querySelector("#userPassword");
-let idPw = {};
-const buttonClick = document.querySelector("#btn-login");
 /*
-
 1. email 정규표현식을 사용한 validation
 2. pw 정규표현식을 사용한 validation
 3. 상태 변수 관리
 4. 로그인 버튼을 클릭시 조건처리
-
 */
 
+// let & const 모음
+const user = {
+  id: "asd@naver.com",
+  pw: "spdlqj123!@",
+};
+const emailInput = document.querySelector("#userEmail");
+const passWordInput = document.querySelector("#userPassword");
+const idPw = {};
+const buttonClick = document.querySelector("#btn-login");
+
+// 정규 표현식 모음
 function emailReg(text) {
   const re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -151,18 +150,20 @@ buttonClick.addEventListener("click", onButtonClick);
 /* 
 
 현 문제점
-idPw.id 가 안나옴 >> updateIdPw() 의 위치를 바꿔줌
-window.location.href = 'welcome/html' 을 해도 적용되지않음
->> 무슨 문제인가 했더니 단순 오타였음
->> preventDefault 인데 Default 의 a 와 u 를 바꿔써서 오류가 났음.
+1.  idPw.id 가 안나옴 
+    >> updateIdPw() 의 위치를 바꿔줌
 
-*/
+2.  window.location.href = 'welcome/html' 을 해도 적용되지않음
+    >> 무슨 문제인가 했더니 단순 오타였음
+    >> preventDefault 인데 Default 의 a 와 u 를 바꿔써서 오류가 났음.
 
-/*
-
-앞으로 해야할 것들
-
-IP 보안 이미지 띄우기
-
+3.  IP 보안 에 연결된 html 파일이 없음.
+    >> 내가 직접 html 파일을 만들어서 작성해 줘야함.
+    >> 작성해서 이미지 파일을 연결해줬음 여기서 궁금점이 생김
+    >> 저렇게 작성한 html 은 img가 여러 정보가 한 뭉텅이(?) 로 이뤄져 있는데 alt 에는 무엇을 써야할지 감이 안옴.
+    >> span 을 써서 단계마다 sr-only 등을 써야 하는지?
+    >> 예를 들어,   <span class='sr-only' >1단계 사용대상 ... 보안효과 ... </span>
+    >>            <span class='sr-only' >2단계 사용대상 ... 보안효과 ... </span>
+    >> 등으로 써야 할지 궁금점이 생김.
 
 */
