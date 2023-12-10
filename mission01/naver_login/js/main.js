@@ -52,12 +52,12 @@ function validEmail() {
     }
     // IdPw 객체 업데이트
     updateIdPw();
+  });
 
-    // 페이지의 첫 화면 또는 새로고침 할 때 클래스 초기화 또는 숨기기
-    window.addEventListener("load", function () {
-      // emailInput 의 클래스 'is--invalid'를 제거
-      emailInput.classList.remove("is--invalid");
-    });
+  // 페이지의 첫 화면 또는 새로고침 할 때 클래스 초기화 또는 숨기기
+  window.addEventListener("load", function () {
+    // emailInput 의 클래스 'is--invalid'를 제거
+    emailInput.classList.remove("is--invalid");
   });
 }
 
