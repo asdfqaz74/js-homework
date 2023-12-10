@@ -13,7 +13,7 @@ const buttonClick = document.querySelector("#btn-login");
 function emailReg(text) {
   const re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  // True or False 로 반환
+
   return re.test(String(text).toLowerCase());
 }
 
@@ -21,7 +21,6 @@ function emailReg(text) {
 function pwReg(text) {
   const re = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{6,16}$/;
 
-  // True or False 로 반환
   return re.test(String(text).toLowerCase());
 }
 
@@ -77,7 +76,8 @@ function isMatch() {
   if (idPw.id === user.id && idPw.pw === user.pw) {
     window.location.href = "./../welcome.html";
   } else {
-    alert("아이디가 일치하지 않습니다.");
+    alert("사용자 정보가 일치하지 않습니다.");
+    passWordInput.value = "";
   }
 }
 

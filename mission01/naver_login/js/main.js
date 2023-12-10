@@ -10,9 +10,8 @@ const user = {
   id: "asd@naver.com",
   pw: "spdlqj123!@",
 };
-let emailInput = document.querySelector("#userEmail");
-let passWordInput = document.querySelector("#userPassword");
-let idPw = {};
+const emailInput = document.querySelector("#userEmail");
+const passWordInput = document.querySelector("#userPassword");
 const buttonClick = document.querySelector("#btn-login");
 
 // 정규 표현식 모음
@@ -41,7 +40,7 @@ function validEmail() {
     let isValidEmail = emailReg(emailInput.value);
 
     // 만약 emailinput.value 가 공백 또는 isValid 가 true 일 때
-    if (emailInput.value == "" || isValidEmail) {
+    if (emailInput.value === "" || isValidEmail) {
       // emailInvalid 의 클래스 'is-invalid' 를 제거
       emailInput.classList.remove("is--invalid");
     }
@@ -72,7 +71,7 @@ function validPassWord() {
     let isValidPassWord = pwReg(passWordInput.value);
 
     // 만약 passWordInput.value 가 공백 또는 isValid 가 true 일 때
-    if (passWordInput.value == "" || isValidPassWord) {
+    if (passWordInput.value === "" || isValidPassWord) {
       // passWordInvalid 의 클래스 'is-invalid' 를 제거
       passWordInput.classList.remove("is--invalid");
     }
