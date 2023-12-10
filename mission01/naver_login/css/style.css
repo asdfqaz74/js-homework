@@ -244,6 +244,10 @@ body {
   display: block;
 }
 
+.is--no-access + .error-message {
+  display: block;
+}
+
 /* 공통 로그인 상태 유지 체크박스 */
 .login-state {
   position: relative;
