@@ -98,3 +98,6 @@
   pwInput.addEventListener("input", handleCheckPw);
   loginButton.addEventListener("click", handleLogin);
 })();
+
+// gsap 애니메이션 추가하려면 head 안에 추가해주기
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
