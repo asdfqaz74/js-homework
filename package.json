@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server mission01/naver_login --host=localhost --port=5600"
+    "dev": "live-server mission02/client --host=localhost --port=5600"
   },
   "keywords": [],
   "author": "",
