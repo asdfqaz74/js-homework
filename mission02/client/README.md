@@ -1,4 +1,4 @@
-# 네이버 로그인 페이지 구현
+bㅠ# 네이버 로그인 페이지 구현
 
 ---
 
@@ -27,6 +27,8 @@
 # 개발자 도구에서 에러가 확인됨.
 
 ![Uncaught ReferenceError](image.png)
+</br>
+
 참조에러 같은데, AudioPlayer.loopPlay 에서 on 이라는 것이 정의되지 않았다 라고 보임. 아직 해결방법을 찾지못함.
 
 # data.js 수정
