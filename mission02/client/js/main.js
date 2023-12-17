@@ -33,6 +33,8 @@ function handleClick(e) {
 
   list.forEach((li) => li.classList.remove("is-active"));
 
+  li.classList.add("is-active");
+
   visualImage.src = `./assets/${data[index - 1].src}`;
   visualImage.alt = data[index - 1].alt;
   nickName.textContent = data[index - 1].name;
@@ -42,6 +44,7 @@ function handleClick(e) {
     `linear-gradient(to bottom,${data[index - 1].color})`
   );
 
+  // audioPlayer
   audioPlayer.stop();
   audioPlayer = new AudioPlayer(`./assets/audio/${data[index - 1].audio}`);
   audioPlayer.loopPlay();
