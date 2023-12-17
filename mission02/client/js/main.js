@@ -3,7 +3,7 @@ const ul = getNode("ul");
 const visualImage = getNode(".visual img");
 const nickName = getNode(".nickName");
 const bodyColor = getNode("body");
-let audioPlayer = new AudioPlayer();
+let audioPlayer = new AudioPlayer("./assets/audio");
 
 function handleClick(e) {
   e.preventDefault();
